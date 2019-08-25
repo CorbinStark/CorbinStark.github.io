@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Text Adventure</title>
+        <script src="functions.js"></script>
+        <script src="terminal.js"></script>
+        <script src="choices.js"></script>
+	     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body {
+                margin: 0 auto;
+                font-family: "Georgia";
+                text-align: center;
+                width: 70%;
+            }
+            #title {
+                margin: 0 auto;
+                font-family: "Georgia";
+                text-align: center;
+                width: 70%;
+            }
+            p {
+                margin: 10px;
+            }
+            #warning {
+                color: red;
+                font-size: 32px;
+            }
+            #info {
+                color: blue;
+                font-size: 26px;
+            }
+            #terminal {
+                background-color: black;
+                width: 400px;
+                height: 400px;
+                padding: auto;
+                text-align: left;
+                margin: auto;
+            }
+            #terminal p {
+                color: #90EE90;
+                margin-left: 20px;
+            }
+            #terminal input {
+                color: #90EE90;
+                background-color: black;
+                margin: 15px;
+                border: 0px solid;
+
+            }
+            h1 {
+                margin: 10px;
+            }
+            input {
+                margin: 0 auto;
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            hr {
+                border: 0;
+                height: 1px;
+                background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="page">
+
+            <h3 id="health">Health: 100</h3>
+            <br>
+            <h1 id="title"></h1>
+            <hr>
+            <p id="desc"></p>
+            <h3 id="enemyHealth">Health: 100</h3>
+            <p id="warning"></p>
+            <p id="info"></p>
+            <!-- images -->
+            <hr>
+            <div id="choices">
+                <input type="button" id="start_over" value="I think I'm lost..."></input>
+                <input type="button" id="hear_story" value="Hear The Story"></input>
+                <input type="button" id="escape_your_fate" value="Escape Your Fate"></input>
+                <input type="button" id="visit_fairies" value="I think she approached the fairies"></input>
+                <input type="button" id="talk_fairies" value="I think she spoke to the fairies"></input>
+                <input type="button" id="fight_fairies" value="I think she put the fairies out of their misery"></input>
+                <input type="button" id="leave_fairies" value="I think she left them to their rituals"></input>
+                <input type="button" id="leave_cave" value="I think she left the cave"></input>
+
+                <input type="button" name="virtue_paths" id="prudence_path" value="She went down the Prudence path"></input>
+                <input type="button" name="virtue_paths" id="justice_path" value="She went down the Justice path"></input>
+                <input type="button" name="virtue_paths" id="temperance_path" value="She went down the Temperance path"></input>
+                <input type="button" name="virtue_paths" id="courage_path" value="She went down the Courage path"></input>
+                <input type="button" name="virtue_paths" id="faith_path" value="She went down the Faith path"></input>
+                <input type="button" name="virtue_paths" id="hope_path" value="She went down the Hope path"></input>
+                <input type="button" name="virtue_paths" id="charity_path" value="She went down the Charity path"></input>
+
+                <input type="button" id="approach_machine" value="She took a look at the Machine"></input>
+                <input type="button" id="ask_question" value="She asked it a question"></input>
+                <input type="button" id="leave_machine" value="She left the Machine"></input>
+                <input type="button" id="leave_machine_damaged" value="She left the Machine"></input>
+                <input type="button" id="to_moonbright" value="She continued on to Moonbright village"></input>
+                <input type="button" id="to_iverness" value="She continued on to Iverness village"></input>
+                <input type="button" id="to_landow" value="She continued on to Landow village"></input>
+                <input type="button" id="back_to_clearing" value="She returned to the clearing"></input>
+                <input type="button" id="follow_man" value="She followed the man"></input>
+
+                <input type="button" id="to_be_continued" value="To Be Continued..."></input>
+
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+                <input type="button" id=""></input>
+
+                <!-- Spoiler Choices -->
+                <input type="button" id="break_the_illusion" value="Break The Illusion"></input>
+                <input type="button" id="become_lost" value="Become Lost"></input>
+            </div>
+
+            <!-- The Machine -->
+            <div id="terminal">
+                <br>
+                <p id="terminal_text">What do you wish to know?</p>
+                <p id="terminal_input">gt;</p>
+                <p id="terminal_loading"></p>
+                <p id="terminal_answer"></p>
+            </div>
+
+        </div>
+		
+		<script>
+		    var buttons = element("choices").children;
+    for(var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = 'none';
+    }
+	</script>
+
+        <iframe id="music" width="0" height="0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </body>
+
+</html>
