@@ -1,0 +1,109 @@
+!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+}
+
+.content-bottom {
+  position: fixed;
+  bottom: -20;
+  background: rgba(0, 0, 0, 0.90);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+}
+
+.myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 5px;
+  border: 3px dashed rgba(255, 255, 255, 0.65);
+  background: rgba(0, 0, 0, 0.50);
+  color: #fff;
+  cursor: pointer;
+}
+
+.myBtn:hover {
+  background: rgba(55, 205, 55, 0.45);
+}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .demo {
+  	width: 50%;
+    height: 50%;
+  }
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="vid2.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1>Portfolio</h1>
+  <br><br>
+  <h1 style="text-align:center; font-family: Georgia, serif;">I Am Corbin Stark</h1>
+  <p style="text-align:center; font-family: Georgia, serif;">Professional Software Developer and Game Developer Hobbyist</p>
+  <br>
+  <div style="width:200px; margin:auto;">
+  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='mywork.html';">
+	My Work
+  </button>
+  <br><br>
+  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='https://w3docs.com';">
+	My Skills
+  </button>
+  <br><br>
+  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='https://w3docs.com';">
+	About Me
+  </button>
+   <br><br>
+  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='https://w3docs.com';">
+	Contact
+  </button>
+  </div>
+</div>
+
+<div class="content-bottom">
+  <p style="text-align:center;">Footer Text</p>
+</div>
+
+</body>
+</html>
