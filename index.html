@@ -20,7 +20,7 @@
 body {
   background-color: black;
   margin: 0;
-  font-family: Arial;
+  font-family: Georgia, serif;
   font-size: 17px;
 }
 
@@ -28,8 +28,9 @@ body {
   position: relative;
   right: 0;
   bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
+  object-fit:cover;
+  width: 100%; 
+  //height: 700px;
 }
 
 .content {
@@ -43,12 +44,12 @@ body {
 }
 
 .content-bottom {
-  position: relative;
-  bottom: -20;
+  position: fixed;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.90);
   color: #f1f1f1;
   width: 100%;
-  padding: 20px;
+  padding-top: 5px;
   margin-right: 50%;
 }
 
@@ -88,8 +89,7 @@ a {
 </video>
 
 <div class="content">
-  <h1>Portfolio</h1>
-  <br><br>
+  <br><br><br><br><br>
   <h1 style="text-align:center; font-family: Georgia, serif;">I Am Corbin Stark</h1>
   <p style="text-align:center; font-family: Georgia, serif;">Professional Software Developer and Game Developer Hobbyist</p>
   <br>
@@ -112,10 +112,9 @@ a {
   </div>
 </div>
 
-<!-- !PAGE CONTENT! -->
+<!-- !PAGE CONTENT!
 <div class="w3-main" style="margin-right:20%;margin-left:20%;">
 
-  <!-- Header -->
   <header id="portfolio">
     <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-center w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-white" onclick="w3_open()"><i class="fa fa-bars"></i></span>
@@ -125,7 +124,8 @@ a {
     </div>
   </header>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%;">
-  <!-- Indicators -->
+
+
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -135,7 +135,6 @@ a {
 	<li data-target="#myCarousel" data-slide-to="5"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
       <img src="phantom.png" alt="Phantom of Waning Requiem">
@@ -186,7 +185,7 @@ a {
     </div>
   </div>
 
-  <!-- Left and right controls -->
+
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
     <span class="sr-only">Previous</span>
@@ -208,7 +207,7 @@ a {
 	<br><br><br><br><br><br>
 	
 	
-  <!-- Contact Section -->
+
   <div class="w3-container w3-padding-large w3-white">
     <h4 id="contact"><b>Contact Me</b></h4>
     <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
@@ -226,7 +225,8 @@ a {
       </div>
     </div>
   </div>
-
+ -->
+ 
 <div class="content-bottom">
   <a href="adventure/adventure.html"><p style="text-align:center;text-decoration:underline;">Click Here To Go On An Adventure</p></a>
 </div>
