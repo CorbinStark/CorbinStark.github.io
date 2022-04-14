@@ -25,16 +25,25 @@ body {
   font-size: 17px;
 }
 
-#myVideo {
-  position: relative;
+#my_Canvas {
+  position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: -10;
   object-fit:cover;
   width: 100%; 
   //height: 700px;
 }
 
-.content {
+.project-item {
+  width: 49%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  margin: auto;
+  display: inline;
+  float:left;
+}
+
+.main-content {
   position: absolute;
   top: 0;
   background: rgba(0, 0, 0, 0.0);
@@ -42,6 +51,39 @@ body {
   width: 100%;
   padding: 20px;
   margin-right: 50%;
+}
+
+.projects-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.aboutme-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.contact-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
 }
 
 .content-bottom {
@@ -85,25 +127,25 @@ a {
    <body>
       <canvas width = 100% height = 100% id = "my_Canvas"></canvas>
 	  
-		<div class="content">
+		<div class="main-content" id="main-menu">
 		  <br><br><br><br><br>
-		  <h1 style="text-align:center; font-family: Georgia, serif;">I Am Corbin Stark</h1>
-		  <p style="text-align:center; font-family: Georgia, serif;">Professional Software Developer and Game Developer Hobbyist</p>
+		  <h1 style="text-align:center; font-family: Georgia, serif;">Corbin Stark</h1>
+		  <p style="text-align:center; font-family: Georgia, serif;">Software Developer and Game Developer Hobbyist</p>
 		  <br>
 		  <div style="width:200px; margin:auto;">
-		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='mywork.html';">
-			My Work
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects();">
+			Projects
 		  </button>
 		  <br><br>
 		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='myskills.html';">
-			My Resume
+			Resume
 		  </button>
 		  <br><br>
-		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='mywork.html#about';">
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showAboutMe();">
 			About Me
 		  </button>
 		   <br><br>
-		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='mywork.html#contact';">
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showContact();">
 			Contact
 		  </button>
 		  <br><br>
@@ -116,9 +158,97 @@ a {
 		  </button>
 		  </div>
 	</div>
+	
+	<div class="projects-content" id="projects">
+		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Phantom of Waning Reverie</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/j0dPHoIqvUs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A 2.5D tactical turn based RPG created using my own Bahamut Game Library. Heavily inspired by games such as Final Fantasy Tactics, Fire Emblem, and Disgaea. Still in early development.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Dungeon Crawler VR Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/F36vCFRLHZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A VR game made in Unity. Fight your way through dungeons generated from easily editable PNG files. Created for CS410 Virtual Reality with one other teammate.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Defend Your Bounty' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/Uw1Em9ijeiY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A unique tower defence game made for the OGA Spring Game Jam 2019. Won second place overall, first place in gameplay. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Dying Is Intended' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/X4rbaQYOP-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A short game made as practice for game jams. I gave myself a limited time span of a week to see how far I could get making a platformer with my own engine.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">OpenGL Fragment Shader Raytracer</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/bZhYCC5Lt70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A very simple raytracer made in a fragment shader. I made this because I've started to study raytracing technology recently, this is the first step on my journey before I take the leap into learning Vulkan's raytracing tools.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Bahamut Game Library</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/R_AREwsR1PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A 2D and 3D computer graphics library using OpenGL in C/C++ to render models and handle features such as (but not limited to) reflections, instanced particles, lighting, and cascaded shadowmapping. Includes a custom-written column-major linear algebra module.</p>
+		  </div>
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  </div>
+		  <br><br>
+	</div>
+	
+	<div class="aboutme-content" id="aboutme">
+		<p>I am a software developer with a primary interest in Computer Graphics technology and web development (and sometimes the intersection between the two, if you've noticed the background canvas of this page). I've previously graduated with a Bachelors degree in Computer Science from Portland State University. I make games as a hobby but I've loved all types of programming since I was young.
+		<br><br>I thrive working in a team and I enjoy having a variety of tasks and projects. I am skilled at debugging and optimizing code, and I love to learn new things.
+		I began programming when I was ten, but didn't get serious about it until I became the president of my high school's coding club. There I made simple 2D games in Java, before eventually moving to 3D
+		development in C++ with my own custom engine I wrote using OpenGL. Recently I've become interested in modern ray tracing technology, so I am currently self-studying that. <a href="https://www.youtube.com/watch?v=bZhYCC5Lt70">I wrote a simple demo of a ray-marched scene</a> in a GLSL fragment shader as my first project, and I plan to learn Vulkan next in order to use their ray tracing tools.
+		</p>
+		<button class="myBtn" style="width:200px; margin: auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		</button>
+	</div>
+	
+	<div class="contact-content" id="contact">
+		<p>Phone: 503-953-9768</p>
+		<p>Email: Starkcorbin@gmail.com</p>
+		<p>Location: Oregon, USA</p>
+		<p>Github: https://github.com/CorbinStark</p>
+		<p>Linkedin: https://www.linkedin.com/in/corbin-stark-b4068a15b/</p>
+		
+		<button class="myBtn" style="width:200px; margin: auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		</button>
+	</div>
 		
       <script>
 		 var speedModifier = 1.0;
+		 
+		 function showContact() {
+			document.getElementById('contact').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function showAboutMe() {
+			document.getElementById('aboutme').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function showProjects() {
+			document.getElementById('projects').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function backToMenu() {
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('contact').setAttribute('style', 'visibility:hidden');
+			document.getElementById('aboutme').setAttribute('style', 'visibility:hidden');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:visible');
+		 }
 		 
 		 function increaseSpeed() {
 			speedModifier = speedModifier - 0.1;
@@ -158,7 +288,7 @@ a {
 
          //Fragment shader source code
          var fragCode = `
-		 precision highp float;
+precision highp float;
 uniform vec2 iResolution;
 uniform float time;
 
@@ -235,12 +365,10 @@ void main(void)
 	gl_FragColor = mix(freqs[3]-.3, 1., v) * vec4(1.5*freqs[2] * t * t* t , 1.2*freqs[1] * t * t, freqs[3]*t, 1.0)+c2+starcolor;
 }`;
 
-         // Create fragment shader object
          var fragShader = gl.createShader(gl.FRAGMENT_SHADER);
          gl.shaderSource(fragShader, fragCode);
          gl.compileShader(fragShader);
 
-         // Create a shader program object to store combined shader program
          var shaderProgram = gl.createProgram();
          gl.attachShader(shaderProgram, vertShader); 
          gl.attachShader(shaderProgram, fragShader);
@@ -282,13 +410,8 @@ void main(void)
             gl.viewport(0.0, 0.0, canvas.width, canvas.height);
             gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 			
-			/* Set uniforms */
 			gl.uniform1f(timeUniform, time/(1000*speedModifier));
 			gl.uniform2f(resolution, 1800, 1600);
-
-            //gl.uniformMatrix4fv(_Pmatrix, false, proj_matrix);
-            //gl.uniformMatrix4fv(_Vmatrix, false, view_matrix);
-            //gl.uniformMatrix4fv(_Mmatrix, false, mo_matrix);
 
             gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_buffer);
             gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
