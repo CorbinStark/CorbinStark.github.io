@@ -1,0 +1,650 @@
+<!doctype html>
+<html>
+<title>Corbin Stark - Home Page</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+#my_Canvas {
+  position: fixed;
+  right: 0;
+  bottom: -10;
+  object-fit:cover;
+  width: 100%; 
+  //height: 700px;
+}
+
+.project-item {
+  width: 49%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  margin: auto;
+  display: inline;
+  float:left;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+}
+
+.projects-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.aboutme-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.contact-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.content-bottom {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.90);
+  color: #f1f1f1;
+  width: 100%;
+  padding-top: 5px;
+  margin-right: 50%;
+}
+
+.myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 5px;
+  border: 3px dashed rgba(255, 255, 255, 0.65);
+  background: rgba(0, 0, 0, 0.50);
+  color: #fff;
+  cursor: pointer;
+}
+
+a {
+	color:white;
+}
+
+.myBtn:hover {
+  background: rgba(55, 205, 55, 0.45);
+}
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  .demo {
+  	width: 50%;
+    height: 50%;
+  }
+</style>
+</head>
+   <body>
+      <canvas width = 100% height = 100% id = "my_Canvas"></canvas>
+	  
+		<div class="main-content" id="main-menu">
+		  <br><br><br><br><br>
+		  <h1 style="text-align:center; font-family: Georgia, serif;">Corbin Stark</h1>
+		  <p style="text-align:center; font-family: Georgia, serif;">Software Developer and Game Developer Hobbyist</p>
+		  <br>
+		  <div style="width:200px; margin:auto;">
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects();">
+			Projects
+		  </button>
+		  <br><br>
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='myskills.html';">
+			Resume
+		  </button>
+		  <br><br>
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showAboutMe();">
+			About Me
+		  </button>
+		   <br><br>
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showContact();">
+			Contact
+		  </button>
+		  <br><br>
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="increaseSpeed()">
+			Increase Galaxy Speed
+		  </button>
+		  <br><br>
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="decreaseSpeed()">
+			Decrease Galaxy Speed
+		  </button>
+		  </div>
+	</div>
+	
+	<div class="projects-content" id="projects">
+		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Phantom of Waning Reverie</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/j0dPHoIqvUs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A 2.5D tactical turn based RPG created using my own Bahamut Game Library. Heavily inspired by games such as Final Fantasy Tactics, Fire Emblem, and Disgaea. Still in early development.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Dungeon Crawler VR Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/F36vCFRLHZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A VR game made in Unity. Fight your way through dungeons generated from easily editable PNG files. Created for CS410 Virtual Reality with one other teammate.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">OpenGL Fragment Shader Raytracer</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/bZhYCC5Lt70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A very simple raytracer made in a fragment shader. I made this because I've started to study raytracing technology recently, this is the first step on my journey before I take the leap into learning Vulkan's raytracing tools.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Bahamut Game Library</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/R_AREwsR1PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A computer graphics library using OpenGL in C/C++ to render models and handle features such as reflections, instanced particles, lighting, and cascaded shadowmapping. Includes a custom-written column-major linear algebra module.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Defend Your Bounty' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/Uw1Em9ijeiY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A unique tower defence game made for the OGA Spring Game Jam 2019. Won second place. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Dying Is Intended' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/X4rbaQYOP-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A short game made as practice for game jams. I gave myself a limited time span of a week to see how far I could get making a platformer with my own engine.</p>
+		  </div>
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  </div>
+		  <br><br>
+	</div>
+	
+	<div class="aboutme-content" id="aboutme">
+		<p>I am a software developer with a primary interest in Computer Graphics technology and web development (and sometimes the intersection between the two, if you've noticed the background canvas of this page). I've previously graduated with a Bachelors degree in Computer Science from Portland State University. I make games as a hobby but I've loved all types of programming since I was young.
+		<br><br>I thrive working in a team and I enjoy having a variety of tasks and projects. I am skilled at debugging and optimizing code, and I love to learn new things.
+		I began programming when I was ten, but didn't get serious about it until I became the president of my high school's coding club. There I made simple 2D games in Java, before eventually moving to 3D
+		development in C++ with my own custom engine I wrote using OpenGL. Recently I've become interested in modern ray tracing technology, so I am currently self-studying that. <a href="https://www.youtube.com/watch?v=bZhYCC5Lt70">I wrote a simple demo of a ray-marched scene</a> in a GLSL fragment shader as my first project, and I plan to learn Vulkan next in order to use their ray tracing tools.
+		</p>
+		<button class="myBtn" style="width:200px; margin: auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		</button>
+	</div>
+	
+	<div class="contact-content" id="contact">
+		<p>Phone: 503-953-9768</p>
+		<p>Email: Starkcorbin@gmail.com</p>
+		<p>Location: Oregon, USA</p>
+		<p>Github: https://github.com/CorbinStark</p>
+		<p>Linkedin: https://www.linkedin.com/in/corbin-stark-b4068a15b/</p>
+		<button class="myBtn" style="width:200px; margin: auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		</button>
+	</div>
+		
+      <script>
+		 var speedModifier = 1.0;
+		 
+		 function showContact() {
+			document.getElementById('contact').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function showAboutMe() {
+			document.getElementById('aboutme').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function showProjects() {
+			document.getElementById('projects').setAttribute('style', 'visibility:visible');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+		 }
+		 
+		 function backToMenu() {
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('contact').setAttribute('style', 'visibility:hidden');
+			document.getElementById('aboutme').setAttribute('style', 'visibility:hidden');
+			document.getElementById('main-menu').setAttribute('style', 'visibility:visible');
+		 }
+		 
+		 function increaseSpeed() {
+			speedModifier = speedModifier - 0.1;
+			if(speedModifier < 0.1) speedModifier = 0.1;
+		 }
+		 
+		 function decreaseSpeed() {
+			speedModifier = speedModifier + 0.1;
+			if(speedModifier > 1.5) speedModifier = 1.5;
+		 }
+	  
+         var canvas = document.getElementById('my_Canvas');
+         var gl = canvas.getContext('experimental-webgl');
+
+         var vertices = [-1, -1, -1, 1, 1, 1, 1, -1];
+		 var indices = [0,1,2,0,2,3];
+
+         var vertex_buffer = gl.createBuffer();
+         gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+		 
+		 var index_buffer = gl.createBuffer();
+		 gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_buffer);
+		 gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+
+         // Vertex shader source code
+         var vertCode = `
+            attribute vec2 coordinates;
+            void main(void) {
+				gl_Position = vec4(coordinates,0.0, 1.0);
+			}`;
+
+         //Create a vertex shader object
+         var vertShader = gl.createShader(gl.VERTEX_SHADER);
+         gl.shaderSource(vertShader, vertCode);
+         gl.compileShader(vertShader);
+
+         //Fragment shader source code
+         var fragCode = `
+		 // License CC0: Stars and galaxy
+// Bit of sunday tinkering lead to stars and a galaxy
+// Didn't turn out as I envisioned but it turned out to something
+// that I liked so sharing it.
+
+precision highp float;
+uniform vec2 iResolution;
+uniform float iTime;
+
+// Controls how many layers of stars
+#define LAYERS            5.0
+
+#define PI                3.141592654
+#define TAU               (2.0*PI)
+#define TIME              mod(iTime, 30.0)
+#define TTIME             (TAU*TIME)
+#define RESOLUTION        iResolution
+#define ROT(a)            mat2(cos(a), sin(a), -sin(a), cos(a))
+
+// License: Unknown, author: nmz (twitter: @stormoid), found: https://www.shadertoy.com/view/NdfyRM
+float sRGB(float t) { return mix(1.055*pow(t, 1./2.4) - 0.055, 12.92*t, step(t, 0.0031308)); }
+// License: Unknown, author: nmz (twitter: @stormoid), found: https://www.shadertoy.com/view/NdfyRM
+vec3 sRGB(in vec3 c) { return vec3 (sRGB(c.x), sRGB(c.y), sRGB(c.z)); }
+
+// License: Unknown, author: Matt Taylor (https://github.com/64), found: https://64.github.io/tonemapping/
+vec3 aces_approx(vec3 v) {
+  v = max(v, 0.0);
+  v *= 0.6;
+  float a = 2.51;
+  float b = 0.03;
+  float c = 2.43;
+  float d = 0.59;
+  float e = 0.14;
+  return clamp((v*(a*v+b))/(v*(c*v+d)+e), 0.0, 1.0);
+}
+
+// License: Unknown, author: Unknown, found: don't remember
+float tanh_approx(float x) {
+  //  Found this somewhere on the interwebs
+  //  return tanh(x);
+  float x2 = x*x;
+  return clamp(x*(27.0 + x2)/(27.0+9.0*x2), -1.0, 1.0);
+}
+
+
+// License: WTFPL, author: sam hocevar, found: https://stackoverflow.com/a/17897228/418488
+const vec4 hsv2rgb_K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+vec3 hsv2rgb(vec3 c) {
+  vec3 p = abs(fract(c.xxx + hsv2rgb_K.xyz) * 6.0 - hsv2rgb_K.www);
+  return c.z * mix(hsv2rgb_K.xxx, clamp(p - hsv2rgb_K.xxx, 0.0, 1.0), c.y);
+}
+
+// License: MIT OR CC-BY-NC-4.0, author: mercury, found: https://mercury.sexy/hg_sdf/
+vec2 mod2(inout vec2 p, vec2 size) {
+  vec2 c = floor((p + size*0.5)/size);
+  p = mod(p + size*0.5,size) - size*0.5;
+  return c;
+}
+
+// License: Unknown, author: Unknown, found: don't remember
+vec2 hash2(vec2 p) {
+  p = vec2(dot (p, vec2 (127.1, 311.7)), dot (p, vec2 (269.5, 183.3)));
+  return fract(sin(p)*43758.5453123);
+}
+
+vec2 shash2(vec2 p) {
+  return -1.0+2.0*hash2(p);
+}
+
+vec3 toSpherical(vec3 p) {
+  float r   = length(p);
+  float t   = acos(p.z/r);
+  float ph  = atan(p.y, p.x);
+  return vec3(r, t, ph);
+}
+
+
+// License: CC BY-NC-SA 3.0, author: Stephane Cuillerdier - Aiekick/2015 (twitter:@aiekick), found: https://www.shadertoy.com/view/Mt3GW2
+vec3 blackbody(float Temp) {
+  vec3 col = vec3(255.);
+  col.x = 56100000. * pow(Temp,(-3. / 2.)) + 148.;
+  col.y = 100.04 * log(Temp) - 623.6;
+  if (Temp > 6500.) col.y = 35200000. * pow(Temp,(-3. / 2.)) + 184.;
+  col.z = 194.18 * log(Temp) - 1448.6;
+  col = clamp(col, 0., 255.)/255.;
+  if (Temp < 1000.) col *= Temp/1000.;
+  return col;
+}
+
+
+// License: MIT, author: Inigo Quilez, found: https://www.shadertoy.com/view/XslGRr
+float noise(vec2 p) {
+  // Found at https://www.shadertoy.com/view/sdlXWX
+  // Which then redirected to IQ shader
+  vec2 i = floor(p);
+  vec2 f = fract(p);
+  vec2 u = f*f*(3.-2.*f);
+  
+  float n =
+         mix( mix( dot(shash2(i + vec2(0.,0.) ), f - vec2(0.,0.)), 
+                   dot(shash2(i + vec2(1.,0.) ), f - vec2(1.,0.)), u.x),
+              mix( dot(shash2(i + vec2(0.,1.) ), f - vec2(0.,1.)), 
+                   dot(shash2(i + vec2(1.,1.) ), f - vec2(1.,1.)), u.x), u.y);
+
+  return 2.0*n;              
+}
+
+float fbm(vec2 p, float o, float s, int iters) {
+  p *= s;
+  p += o;
+
+  const float aa = 0.5;
+  const mat2 pp = 2.04*ROT(1.0);
+
+  float h = 0.0;
+  float a = 1.0;
+  float d = 0.0;
+  for (int i = 0; i < 10000; ++i) {
+  if(i>iters) {break;}
+    d += a;
+    h += a*noise(p);
+    p += vec2(10.7, 8.3);
+    p *= pp;
+    a *= aa;
+  }
+  h /= d;
+  
+  return h;
+}
+
+float height(vec2 p) {
+  float h = fbm(p, 0.0, 5.0, 5);
+  h *= 0.3;
+  h += 0.0;
+  return (h);
+}
+
+vec3 stars(vec3 ro, vec3 rd, vec2 sp, float hh) {
+  vec3 col = vec3(0.0);
+  
+  const float m = LAYERS;
+  hh = tanh_approx(20.0*hh);
+
+  for (float i = 0.0; i < m; ++i) {
+    vec2 pp = sp+0.5*i;
+    float s = i/(m-1.0);
+    vec2 dim  = vec2(mix(0.05, 0.003, s)*PI);
+    vec2 np = mod2(pp, dim);
+    vec2 h = hash2(np+127.0+i);
+    vec2 o = -1.0+2.0*h;
+    float y = sin(sp.x);
+    pp += o*dim*0.5;
+    pp.y *= y;
+    float l = length(pp);
+  
+    float h1 = fract(h.x*1667.0);
+    float h2 = fract(h.x*1887.0);
+    float h3 = fract(h.x*2997.0);
+
+    vec3 scol = mix(8.0*h2, 0.25*h2*h2, s)*blackbody(mix(3000.0, 22000.0, h1*h1));
+
+    vec3 ccol = col + exp(-(mix(6000.0, 2000.0, hh)/mix(2.0, 0.25, s))*max(l-0.001, 0.0))*scol;
+    col = h3 < y ? ccol : col;
+  }
+  
+  return col;
+}
+
+// License: MIT, author: Inigo Quilez, found: https://iquilezles.org/articles/spherefunctions
+vec2 raySphere(vec3 ro, vec3 rd, vec4 sph) {
+  vec3 oc = ro - sph.xyz;
+  float b = dot( oc, rd );
+  float c = dot( oc, oc ) - sph.w*sph.w;
+  float h = b*b - c;
+  if( h<0.0 ) return vec2(-1.0);
+  h = sqrt( h );
+  return vec2(-b - h, -b + h);
+}
+
+
+vec4 moon(vec3 ro, vec3 rd, vec2 sp, vec3 lp, vec4 md) {
+  vec2 mi = raySphere(ro, rd, md);
+  
+  vec3 p    = ro + mi.x*rd;
+  vec3 n    = normalize(p-md.xyz);
+  vec3 r    = reflect(rd, n);
+  vec3 ld   = normalize(lp - p);
+  float fre = dot(n, rd)+1.0;
+  fre = pow(fre, 15.0);
+  float dif = max(dot(ld, n), 0.0);
+  float spe = pow(max(dot(ld, r), 0.0), 8.0);
+  float i = 0.5*tanh_approx(20.0*fre*spe+0.05*dif);
+  vec3 col = blackbody(1500.0)*i+hsv2rgb(vec3(0.6, mix(0.6, 0.0, i), i));
+
+  float t = tanh_approx(0.25*(mi.y-mi.x));
+ 
+  return vec4(vec3(col), t);
+}
+
+vec3 sky(vec3 ro, vec3 rd, vec2 sp, vec3 lp, out float cf) {
+  float ld = max(dot(normalize(lp-ro), rd),0.0);
+  float y = -0.5+sp.x/PI;
+  y = max(abs(y)-0.02, 0.0)+0.1*smoothstep(0.5, PI, abs(sp.y));
+  vec3 blue = hsv2rgb(vec3(0.6, 0.75, 0.35*exp(-15.0*y)));
+  float ci = pow(ld, 10.0)*2.0*exp(-25.0*y); 
+  vec3 yellow = blackbody(1500.0)*ci;
+  cf = ci;
+  return blue+yellow;
+}
+
+vec3 galaxy(vec3 ro, vec3 rd, vec2 sp, out float sf) {
+  vec2 gp = sp;
+  gp *= ROT(0.67);
+  gp += vec2(-1.0, 0.5);
+  float h1 = height(2.0*sp);
+  float gcc = dot(gp, gp);
+  float gcx = exp(-(abs(3.0*(gp.x))));
+  float gcy = exp(-abs(10.0*(gp.y)));
+  float gh = gcy*gcx;
+  float cf = smoothstep(0.05, -0.2, -h1);
+  vec3 col = vec3(0.0);
+  col += blackbody(mix(300.0, 1500.0, gcx*gcy))*gcy*gcx;
+  col += hsv2rgb(vec3(0.6, 0.5, 0.00125/gcc));
+  col *= mix(mix(0.15, 1.0, gcy*gcx), 1.0, cf);
+  sf = gh*cf;
+  return col;
+}
+
+vec3 grid(vec3 ro, vec3 rd, vec2 sp) {
+  const float m = 1.0;
+
+  const vec2 dim = vec2(1.0/8.0*PI);
+  vec2 pp = sp;
+  vec2 np = mod2(pp, dim);
+
+  vec3 col = vec3(0.0);
+
+  float y = sin(sp.x);
+  float d = min(abs(pp.x), abs(pp.y*y));
+  
+  float aa = 2.0/RESOLUTION.y;
+  
+  col += 2.0*vec3(0.5, 0.5, 1.0)*exp(-2000.0*max(d-0.00025, 0.0));
+  
+  vec3 test;
+  test.x = tanh_approx(col.x);
+  test.y = tanh_approx(col.y);
+  test.z = tanh_approx(col.z);
+  
+  return 0.25*test;
+}
+
+vec3 color(vec3 ro, vec3 rd, vec3 lp, vec4 md) {
+  vec2 sp = toSpherical(rd.xzy).yz;
+
+  float sf = 0.0;
+  float cf = 0.0;
+  vec3 col = vec3(0.0);
+
+  vec4 mcol = moon(ro, rd, sp, lp, md);
+
+  col += stars(ro, rd, sp, sf)*(1.0-tanh_approx(2.0*cf));
+  col += galaxy(ro, rd, sp, sf);
+  col = mix(col, mcol.xyz, mcol.w);
+  col += sky(ro, rd, sp, lp, cf);
+  col += grid(ro, rd, sp);
+
+  if (rd.y < 0.0)
+  {
+    col = vec3(0.0);
+  }
+
+  return col;
+}
+
+void main() {
+  vec2 q = gl_FragCoord.xy/iResolution.xy;
+  vec2 p = -1.0 + 2.0*q;
+  p.x *= RESOLUTION.x/RESOLUTION.y;
+
+  vec3 ro = vec3(0.0, 0.0, 0.0);
+  vec3 lp = 500.0*vec3(1.0, -0.25, 0.0);
+  vec4 md = 50.0*vec4(vec3(1.0, 1., -0.6), 0.5);
+  vec3 la = vec3(1.0, 0.5, 0.0);
+  vec3 up = vec3(0.0, 1.0, 0.0);
+  la.xz *= ROT(TTIME/60.0-PI/2.0);
+  
+  vec3 ww = normalize(la - ro);
+  vec3 uu = normalize(cross(up, ww));
+  vec3 vv = normalize(cross(ww,uu));
+  vec3 rd = normalize(p.x*uu + p.y*vv + 2.0*ww);
+  vec3 col= color(ro, rd, lp, md);
+  
+  col *= smoothstep(0.0, 4.0, TIME)*smoothstep(30.0, 26.0, TIME);
+  col = aces_approx(col);
+  col = sRGB(col);
+
+  gl_FragColor = vec4(col,1.0);
+}`;
+
+         var fragShader = gl.createShader(gl.FRAGMENT_SHADER);
+         gl.shaderSource(fragShader, fragCode);
+         gl.compileShader(fragShader);
+
+         var shaderProgram = gl.createProgram();
+         gl.attachShader(shaderProgram, vertShader); 
+         gl.attachShader(shaderProgram, fragShader);
+         gl.linkProgram(shaderProgram);
+		 
+		 if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+			console.error('Link failed: ' + gl.getProgramInfoLog(shaderProgram));
+			console.error('vs info-log: ' + gl.getShaderInfoLog(vertShader));
+			console.error('fs info-log: ' + gl.getShaderInfoLog(fragShader));
+		}
+		 
+         gl.useProgram(shaderProgram);
+
+         gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+
+         var coord = gl.getAttribLocation(shaderProgram, "coordinates");
+		 var timeUniform = gl.getUniformLocation(shaderProgram, "iTime");
+		 var resolution = gl.getUniformLocation(shaderProgram, "iResolution");
+
+         gl.vertexAttribPointer(coord, 2, gl.FLOAT, false, 0, 0);
+
+         gl.enableVertexAttribArray(coord);
+		 
+		 var time_old = 0;
+		 
+		 var animate = function(time) {
+            var dt = time-time_old;
+			
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+            time_old = time; 
+            gl.enable(gl.DEPTH_TEST);
+
+            // gl.depthFunc(gl.LEQUAL);
+
+            gl.clearColor(0.5, 0.5, 0.5, 0.9);
+            gl.clearDepth(1.0);
+            gl.viewport(0.0, 0.0, canvas.width, canvas.height);
+            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+			
+			gl.uniform1f(timeUniform, time/(1000*speedModifier));
+			gl.uniform2f(resolution, 1800, 1600);
+
+            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, index_buffer);
+            gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+
+            window.requestAnimationFrame(animate);
+         }
+         animate(0);
+      </script>
+	  
+	  <div class="content-bottom">
+  <a href="adventure/adventure.html"><p style="text-align:center;text-decoration:underline;">Click Here To Go On An Adventure</p></a>
+</div>
+   </body>
+</html>
