@@ -64,6 +64,34 @@ body {
   visibility: hidden;
 }
 
+.phantom-details {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
+.dark-background {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding: 20px;
+}
+
+.art-content {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.0);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  margin-right: 50%;
+  visibility: hidden;
+}
+
 .aboutme-content {
   position: absolute;
   top: 0;
@@ -137,6 +165,12 @@ a {
 			Projects
 		  </button>
 		  <br><br>
+		  <!--
+		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showArt();">
+			Art
+		  </button>
+		  <br><br>
+		  -->
 		  <button class="myBtn" style="width:200px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="window.location.href='myskills.html';">
 			Resume
 		  </button>
@@ -160,46 +194,27 @@ a {
 	</div>
 	
 	<div class="projects-content" id="projects">
-		  <br><br>
-		  <div style="width:1020px; margin:auto;">
-		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
-			Return to Main Menu
-		  </button>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">Phantom of Waning Reverie</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/j0dPHoIqvUs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A 2.5D tactical turn based RPG created using my own Bahamut Game Library. Heavily inspired by games such as Final Fantasy Tactics, Fire Emblem, and Disgaea. Still in early development.</p>
-		  </div>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">Dungeon Crawler VR Game</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/F36vCFRLHZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A VR game made in Unity. Fight your way through dungeons generated from easily editable PNG files. Created for CS410 Virtual Reality with one other teammate.</p>
-		  </div>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">OpenGL Fragment Shader Raytracer</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/bZhYCC5Lt70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A very simple raytracer made in a fragment shader. I made this because I've started to study raytracing technology recently, this is the first step on my journey before I take the leap into learning Vulkan's raytracing tools.</p>
-		  </div>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">Bahamut Game Library</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/R_AREwsR1PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A computer graphics library using OpenGL in C/C++ to render models and handle features such as reflections, instanced particles, lighting, and cascaded shadowmapping. Includes a custom-written column-major linear algebra module.</p>
-		  </div>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">'Defend Your Bounty' - Game Jam Game</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/Uw1Em9ijeiY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A unique tower defence game made for the OGA Spring Game Jam 2019. Won second place. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
-		  </div>
-		  <div class="project-item">
-			  <h3 style="text-align:center;">'Dying Is Intended' - Game Jam Game</h3>
-			  <iframe width=100% height="315" src="https://www.youtube.com/embed/X4rbaQYOP-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A short game made as practice for game jams. I gave myself a limited time span of a week to see how far I could get making a platformer with my own engine.</p>
-		  </div>
-		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
-			Return to Main Menu
-		  </button>
-		  </div>
-		  <br><br>
+
+	</div>
+	
+	<div class="phantom-details" id="phantoms">
+
+	</div>
+	
+	<div class="phantom-details" id="VR">
+
+	</div>
+	
+	<div class="phantom-details" id="raycast">
+
+	</div>
+	
+	<div class="phantom-details" id="engine">
+
+	</div>
+	
+	<div class="art-content" id="art">
+
 	</div>
 	
 	<div class="aboutme-content" id="aboutme">
@@ -237,13 +252,284 @@ a {
 			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
 		 }
 		 
+		 function showPhantomDetails() {
+			document.getElementById('phantoms').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('phantoms').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<p style="text-align:center">(This project is still in development)</p>
+				<h1 style="text-align:center">Overview</h1>
+				<br>
+				
+				<p>Working solo on a game development project is very difficult, especially when I decided to make it harder by making it in my own custom-written game engine with no support, but luckily I have a relatively wide, generalist skillset so I am able to handle most things (Programming, art, story, game design, translating into Japanese, etc.) but it was not easy by any definition. The following are some of the challenges I had to overcome in developing this game.</p>
+				<p>This is a big project so I won't be showing everything off here in order to keep this page relatively short, but I will show off some of the most important systems.</p>
+				<image style="width:100%" src="data/cave.png"</image>
+				<br><br>
+				<h2 style="text-align:center">Design Philosophy</h2>
+				<br><p>I developed a huge range of skills while developing this game, but the biggest ones are time management and goals management. This is no small project, the goal is a 40-hour JRPG, so managing my goals and todo-list is very important to ensure that I am making progress and keeping the scale of the game in check before it blows too out of proportion. So TL;DR I wanted to create story-centric JRPG while keeping my scope in check since JRPGs are very long, and the scope just by default is already going to be somewhat large.</p>
+				<br><h2 style="text-align:center">Mechanics</h2>
+				<br>
+				<p>The core gameplay of the combat system involves either attacking or using abilities by spending stamina during your turn. To make the combat fun and engaging I knew I wanted to add some risk-reward, so I allowed the player (and the enemy AI) to go into negative stamina (up to their normal maximum) in order to attack more than they are normally allowed to in one turn, at the expense of taking twice as much damage while their stamina remains below 0, and also having their movespeed reduced by half.</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/spellcasting.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>The fire magic that you see in the above clip (as well as all other magic) was created using my instanced particle rendering system. In order to draw particles in the first place you need billboards, which are just textured squares that don't rotate with the camera (always face the camera). I already have these billboards because that is how I render 2D sprites on the 3D map. So to create the particle system all I did was create a polymorphic Emitter and Particle base class with their own virtual update methods, and created different types of emitters and particles from those base classes that could then be put into the scene. The instanced part comes in during rendering; I use DrawArraysInstanced() instead of DrawArrays() so that I only need one draw call for ALL the particles instead of a draw call for every single particle. This is a very effective way to render thousands of particles without lag.</p>
+				<br><h2 style="text-align:center">Event-Condition-Action Trigger System</h2>
+				<br>
+				<p>Of course, this game is a story-centric JRPG so cutscenes and other forms of cinematic storytelling is necessary, both inside and outside of combat encounters. In order to achieve this, I knew I needed to create a very dynamic and flexible system to trigger these cutscenes on certain events, and have a variety of different actions occur during cutscenes such as sprites moving, camera moving, dialogue boxes, changing maps, fading in and out, etc, etc. </p>
+				<image style="width:40%; text-align:center" src="data/event system.png"</image>
+				<p>For an example of how this system works, let's say we want to create a trigger that ambushes the player if they enter a certain region on the map. We can easily do it like this:</p>
+				<image style="width:90%; text-align:center" src="data/trigger system.png"</image>
+				<p>The global flag ensures that the event can only happen if the flag isn't set (or doesn't exist) so that this ambush only happens once. Global flags are saved with the save file so even if you load a save after the ambush happens it can't happen again.
+				The event, conditions, and actions are deleted by the Overworld class when no longer in use, so you don't have to worry about any memory leaks.</p>
+				<br><h2 style="text-align:center">Code Structure</h2>
+				<br>
+				<p>If you haven't noticed yet, I am a big fan of polymorphism. I could use an Entity-Component-System or something along those lines, since ECS is a lot better than polymorphism in most cases, but I'm not doing anything complicated enough to justify writing an ECS. Anyways, this is a large game with a lot of different systems that need to interact, so structuring the whole thing was a very important part of the design process.
+				Polymorphism also solves this problem. 
+				</p>
+				<image style="width:50%; text-align:center" src="data/main.png"</image>
+				<p>This is main(). Yup, just this. Every game scene is a derived class from the base State class. Each State has it's own StateGroup so the entire program structure ends up being a tree, where every game state has it's own children.
+				MainMenu has the Options scene as it's child, Game has the Overworld, Combat, and Guild scenes as it's children, and OpeningCutscene has no children (it's a bit of a special class just played on the start of a new game).
+				Children have access to the parent and are friends of it, so they can access the parent's data. This allows, for example, a new character joining your party in the Overworld, and participating in the fight when you move to the Combat scene since both Overworld and Combat have access to the party members in the Game scene. It also allows switching from Combat to Overworld with no loading screens since the assets are loaded in Game and are only unloaded if Game is unloaded for some reason (such as switching to MainMenu or MapEditor).
+				</p>
+				<br><h2 style="text-align:center">Art</h2>
+				<br><p>Originally I wanted to make the entire game with hand-drawn animation and 3D backgrounds (as you should have already seen), but that proved to be incredibly time-consuming and difficult, so one of the compromises I had to make finishing this game achievable is to reduce workload on the art side of things. So with that in mind I decided to make the world map (which is all of the game outside of the typical JRPG combat encounters) in pixel art, but keep the hand-drawn sprites + 3D background art for the combat system only. I thought it might be too strange to mix artstyles like that but I have seen other games do it to great effect and most people I've shown my game to say it isn't too disorienting.</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/city.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>On the technical side of things, there is a lot going on. For the 2D parts of the game, I use batch-rendering such that I can draw 32 textures in 1 draw-call instead of 32 separate draw calls.</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/glitch.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>There are also a few post-processing shaders I wrote for the 2D art (although they can be used for anything so long as you rendered it into a framebuffer). I won't go into too much detail on how these work, but it works basically the same as the galaxy that you can see as the background of this web page.</p>
+
+				<br><h2 style="text-align:center">Wandering NPCs System</h2>
+				<p>I wanted the city map to feel alive and lived-in, not just some abandoned town somewhere, so I thought of the idea of having NPCs wandering around town, entering and exit doors and load zones. This was implemented by creating a graph of waypoints that the NPCs can pathfind through.
+				The NPCs spawn at waypoints labeled as exit nodes, and will randomly select a different exit node as it's destination, then pathfind to it using the A* pathfinding algorithm. The NPCs are all given a random offset so they don't travel exactly on the line between the waypoints.
+				</p>
+				<image style="width:100%; text-align:center" src="data/pathfinding.png"</image>
+			  </div>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
+		 function showVRDetails() {
+			document.getElementById('VR').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('VR').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<h1 style="text-align:center">Overview</h1>
+				<br>
+				<p>Me and one other teammate wrote this as a school project for our VR class. We used Unity's VR support to create a roguelike dungeon crawler. I was responsible primarily for developing the map generation and enemy logic, and my teammate was responsible for handling the player and general mechanics of the game (swinging your sword, etc.)</p>
+				<image style="width:100%" src="data/vr overview.png"</image>
+				<br><br>
+				<br><h2 style="text-align:center">Mechanics</h2>
+				<br>
+				<p>
+				Smooth movement in VR games is often considered very nauseating to some people, so we opted to do a tile-based movement system where you could point to where you wanted to move (as long as it was within your move-range) and teleport there, and then the enemies take their turn to move.
+				It turned out to be a pretty intuitive way of navigating around the dungeon, however there were some issues with the combat because of the tile system. Primarily, the tiles were too large and the sword was too small. We fixed this by making the sword extend as you swing it so that it can collide with the enemies.
+				
+				</p>
+				<br><h2 style="text-align:center">Map Generation</h2><br>
+				<p>The map is generated by reading a .png image file and placing prefabs at grid locations depending on the color of the pixel in the image. </p>
+				<image style="width:50%" src="data/vr map.png"</image>
+				
+				<br><h2 style="text-align:center">Enemies</h2><br>
+				<p>
+				Enemies consist of a billboard with a sprite on it, and a few colored rectangles above it to create a health display. I programmed them with fairly simple logic, nothing too complicated. If they see the player, they will move towards the player and attack if in range.
+				I accomplished this by doing a raycast from the enemy to the player and seeing if the first thing it hit was the player. If it isn't the player, that means a wall is in-between it and the player, so it does not move towards the player.
+				</p>
+				<image style="width:100%" src="data/vr enemy.png"</image>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
+		 function showRaycasterDetails() {
+			document.getElementById('raycast').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('projects').innerHTML = '';
+			document.getElementById('raycast').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<h1 style="text-align:center">Overview</h1>
+				<br>
+				<p>There's not too much to say about this one, it's pretty simple. If you've seen any sort of raymarched scene on ShaderToy then you have seen a more complicated version of what's happening here. Raymarching has always been easier than rasterized rendering so I just did this for the experience with raytracing, especially since it seems that's where the Computer Graphics industry is moving towards. If I have enough free time in the future I'd love to learn the more industry-standard ways of doing efficient raytracing at 60fps with things like Vulkan's tools. It seems that Computer Graphics technology nowadays uses machine learning a lot for things like speeding up global illumination sampling so I may need to learn more about machine learning as well.</p>
+				<image style="width:100%" src="data/raycast.png"</image>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
+		 function showEngineDetails() {
+			document.getElementById('engine').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('engine').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<h1 style="text-align:center">Overview</h1>
+				<br>
+				<p>I wrote this engine primarily because I was interested in Computer Graphics. Ultimately I'm a game developer but I like having lots of control over my code so a custom engine suits me a lot better than something like Unity.
+				I tried to minimize the usage of external libraries, but I did use a few. First of all I used GLFW for context creation. This means that I don't have to deal with operating system code, so my engine should work on all operating systems without too much porting code required (although it's still going to require a small amount of porting). I also used the SOIL library to read .png files into an RGBA array so that I didn't have to decompress .pngs myself. The Assimp library was used to load common 3d model file formats, and the Freetype library was used to load font files (.ttf).
+				</p>
+				<p>If you want to see this engine in action, refer to the more details page for Phantom of Waning Reverie</p>
+				<br><h1 style="text-align:center">Shadowmapping</h2>
+				<br>
+				<video width="100%" muted autoplay loop>
+				<source src="data/shadowmapping.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>
+				Support for rendering shadows was done by rendering the scene from the perspective of the light source into a depth buffer, then loading that depth buffer's texture into the main shader and comparing the two to see what the light source can see. Anything the light source can't see is made darker to simulate shadows.
+				</p>
+				<br><h2 style="text-align:center">Reflections</h2><br>
+				<p>The reflection system currently in the engine is very simple. I plan on implementing screen-space reflections at some point in the future since I know roughly how to do it using raymarching, but for now it's just framebuffer magic.
+				Support for reflections was done by inverting the camera along the y-plane and rendering the scene upside-down into a framebuffer, then loading that framebuffer's image into another shader that mixed the reflected image into the water color to create a simple reflection.
+				<image style="width:100%" src="data/reflection.png"</image>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
 		 function showProjects() {
 			document.getElementById('projects').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Phantom of Waning Reverie</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/j0dPHoIqvUs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A 2.5D tactical turn based RPG created using my own Bahamut Game Library. Inspired by games such as Final Fantasy Tactics, Fire Emblem, and Disgaea. This is my most important project.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showPhantomDetails()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Dungeon Crawler VR Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/F36vCFRLHZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A VR game made in Unity. Fight your way through dungeons generated from easily editable PNG files. Created for CS410 Virtual Reality with one other teammate.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showVRDetails()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">OpenGL Fragment Shader Raytracer</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/bZhYCC5Lt70" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A simple raytracer made in a fragment shader. I made this because I've started to study raytracing technology recently, this is the first step on my journey before I take the leap into learning Vulkan's raytracing tools.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showRaycasterDetails()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">Bahamut Game Library</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/R_AREwsR1PE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A computer graphics library using OpenGL in C/C++ to render models and handle features such as reflections, instanced particles, lighting, and cascaded shadowmapping. Includes a custom-written column-major linear algebra module.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showEngineDetails()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Defend Your Bounty' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/Uw1Em9ijeiY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A unique tower defence game made for the OGA Spring Game Jam 2019. Won second place. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <div class="project-item">
+			  <h3 style="text-align:center;">'Dying Is Intended' - Game Jam Game</h3>
+			  <iframe width=100% height="315" src="https://www.youtube.com/embed/X4rbaQYOP-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			  <p>A short game made as practice for game jams. I gave myself a limited time span of a week to see how far I could get making a platformer with my own engine.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+				More Details On This Project
+			  </button>
+		  </div>
+		  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  </div>
+		  <br><br>`
+			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
+			document.getElementById('phantoms').setAttribute('style', 'visibility:hidden');
+			document.getElementById('phantoms').innerHTML = ''
+			document.getElementById('VR').setAttribute('style', 'visibility:hidden');
+			document.getElementById('VR').innerHTML = ''
+			document.getElementById('raycast').setAttribute('style', 'visibility:hidden');
+			document.getElementById('raycast').innerHTML = ''
+			document.getElementById('engine').setAttribute('style', 'visibility:hidden');
+			document.getElementById('engine').innerHTML = ''
+		 }
+		 
+		 function showArt() {
+			document.getElementById('art').setAttribute('style', 'visibility:visible');
+			document.getElementById('art').innerHTML = `<br><br>
+		  <div style="width:1520px; margin:auto;">
+		  <button class="myBtn" style="width:1500px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  <center>
+		  <img src="data/pixel art.png" alt="Akari">
+		  <img src="data/barmaid.png" width=200 alt="Akari">
+		  <img src="data/cordelia-pixel.png"  width=200  alt="Akari">
+		  <img src="data/ojousama.png"  width=200  alt="Akari">
+		  <img src="data/nekomata ojousama.png"  width=200  alt="Akari">
+		  <img src="data/akari.png" alt="Akari">
+		  <img src="data/cordelia.png"  alt="Akari">
+		  <img src="data/fairy.png"  alt="Akari">
+		  <img src="data/fairy_queen.png"  alt="Akari">
+		  <img src="data/fairy_queen_wink.png" alt="Akari">
+		  <img src="data/sleep.png" alt="Akari">
+		  <img src="data/cave.png" width = 1500 alt="Akari">
+		  </center>
+		  <button class="myBtn" style="width:1500px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			Return to Main Menu
+		  </button>
+		  </div>
+		  <br><br>`
 			document.getElementById('main-menu').setAttribute('style', 'visibility:hidden');
 		 }
 		 
 		 function backToMenu() {
 			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('art').setAttribute('style', 'visibility:hidden');
+			document.getElementById('art').innerHTML='';
+			document.getElementById('projects').innerHTML='';
 			document.getElementById('contact').setAttribute('style', 'visibility:hidden');
 			document.getElementById('aboutme').setAttribute('style', 'visibility:hidden');
 			document.getElementById('main-menu').setAttribute('style', 'visibility:visible');
@@ -420,8 +706,10 @@ void main(void)
          animate(0);
       </script>
 	  
+	  <!--
 	  <div class="content-bottom">
   <a href="adventure/adventure.html"><p style="text-align:center;text-decoration:underline;">Click Here To Go On An Adventure</p></a>
 </div>
+-->
    </body>
 </html>
