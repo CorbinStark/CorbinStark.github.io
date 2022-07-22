@@ -76,7 +76,7 @@ body {
 }
 
 .dark-background {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   padding: 20px;
 }
@@ -212,6 +212,12 @@ a {
 	<div class="phantom-details" id="engine">
 
 	</div>
+	<div class="phantom-details" id="bounty">
+
+	</div>
+	<div class="phantom-details" id="dying">
+
+	</div>
 	
 	<div class="art-content" id="art">
 
@@ -255,6 +261,7 @@ a {
 		 function showPhantomDetails() {
 			document.getElementById('phantoms').setAttribute('style', 'visibility:visible');
 			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('projects').innerHTML = '';
 			document.getElementById('phantoms').innerHTML = `		  <br><br>
 		  <div style="width:1020px; margin:auto;">
 			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
@@ -309,7 +316,7 @@ a {
 				<source src="data/glitch.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 				</video>
-				<p>There are also a few post-processing shaders I wrote for the 2D art (although they can be used for anything so long as you rendered it into a framebuffer). I won't go into too much detail on how these work, but it works basically the same as the galaxy that you can see as the background of this web page.</p>
+				<p>There are also a few post-processing shaders I wrote for the 2D art (although they can be used for anything so long as you rendered it into a framebuffer). To use postprocessing shaders you need to render the whole scene into a framebuffer then put that framebuffer's texture into the postprocessing shader and it will add some final touches to the finished image before flushing it to the screen. This glitch shader that you see here slightly offsets the R, G, and B channels from each other to create a chromatic effect, then applies a small amount of static to everything. In addition to that it creates the scanline effect by moving the texture coordinates over slightly in a line (and that line moves slowly downwards). Finally it also has a block glitch effect where a few squares from the framebuffer image are moved somewhere else on the image. The galaxy that you can see as the background of this web page works on a similar premise to how these post processing shaders work.</p>
 
 				<br><h2 style="text-align:center">Wandering NPCs System</h2>
 				<p>I wanted the city map to feel alive and lived-in, not just some abandoned town somewhere, so I thought of the idea of having NPCs wandering around town, entering and exit doors and load zones. This was implemented by creating a graph of waypoints that the NPCs can pathfind through.
@@ -425,6 +432,87 @@ a {
 		  <br><br>`
 		 }
 		 
+		 function showBountyDetails() {
+			document.getElementById('bounty').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('bounty').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<h1 style="text-align:center">Overview</h1>
+				<br>
+				<p>
+				Making this game was actually very educational. When I finished developing it at the end of the deadline, I released it thinking I made it too easy. I was then later shocked to find a lot of people said the game was too hard.
+				It turns out, when developing a game and constantly play-testing it, you tend to get very good at your own game and under-estimate it's difficulty to someone new to the game. This project really taught me the importance of having others play-test your game to hear their opinions during the development process.
+				</p>
+				<image style="width:100%" src="data/bounty.png"</image>
+				<br><h1 style="text-align:center">Mechanics</h2>
+				<br>
+				<p>
+				The game's systems primarily revolve around enemy pirates landing onto your beaches from their boats, and then moving towards the closest structure you have built and attempting to destroy it to get to your gold pile. If they reach your gold pile they will steal a piece of gold and run away with it. If you run out of gold, you lose.
+				</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/landings.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>The enemy pirates movement works by using the Boids algorithm. The boids algorithm has three components to it: Separation, Alignment, and Cohesion. Each boid steers gradually towards other boids (although not so much that they steer away from their destination structure), but boids also steer <i>away</i> from other boids if they are too close so that they do not collide into each other. Finally, the boids try to match direction as much as possible so that they stay in a loose formation.
+				</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/boids.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>There are also boss fights, but they aren't too much different from normal waves. The boss is a lot tougher than normal enemies and has a health bar on the bottom of the screen.</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/boss.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
+		function showDyingDetails() {
+			document.getElementById('dying').setAttribute('style', 'visibility:visible');
+			document.getElementById('projects').setAttribute('style', 'visibility:hidden');
+			document.getElementById('dying').innerHTML = `		  <br><br>
+		  <div style="width:1020px; margin:auto;">
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+			  
+			  <div class="dark-background">
+				<h1 style="text-align:center"></h1>
+				<br>
+				<p>
+				
+				</p>
+				<image style="width:100%" src="data/dyingimage.png"</image>
+				<br><h1 style="text-align:center"></h2>
+				<br>
+				<video width="100%" muted autoplay loop>
+				<source src="data/dying1.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+				<p>
+				</p>
+				<video width="100%" muted autoplay loop>
+				<source src="data/dying2.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
+			  
+			  <button class="myBtn" style="width:1000px; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showProjects()">
+				Return to Projects Menu
+			  </button>
+		  </div>
+		  <br><br>`
+		 }
+		 
 		 function showProjects() {
 			document.getElementById('projects').setAttribute('style', 'visibility:visible');
 			document.getElementById('projects').innerHTML = `		  <br><br>
@@ -467,8 +555,8 @@ a {
 		  <div class="project-item">
 			  <h3 style="text-align:center;">'Defend Your Bounty' - Game Jam Game</h3>
 			  <iframe width=100% height="315" src="https://www.youtube.com/embed/Uw1Em9ijeiY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			  <p>A unique tower defence game made for the OGA Spring Game Jam 2019. Won second place. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
-			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			  <p>A castle-building tower defence game made for the OGA Spring Game Jam 2019. Won second place. Build a fort, defend waves of enemies trying to steal your bounty, and survive boss attacks.</p>
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showBountyDetails()">
 				More Details On This Project
 			  </button>
 		  </div>
@@ -476,7 +564,7 @@ a {
 			  <h3 style="text-align:center;">'Dying Is Intended' - Game Jam Game</h3>
 			  <iframe width=100% height="315" src="https://www.youtube.com/embed/X4rbaQYOP-M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			  <p>A short game made as practice for game jams. I gave myself a limited time span of a week to see how far I could get making a platformer with my own engine.</p>
-			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="backToMenu()">
+			  <button class="myBtn" style="width:100%; margin:auto; text-align:center; font-family: Georgia, serif;" onclick="showDyingDetails()">
 				More Details On This Project
 			  </button>
 		  </div>
@@ -494,6 +582,10 @@ a {
 			document.getElementById('raycast').innerHTML = ''
 			document.getElementById('engine').setAttribute('style', 'visibility:hidden');
 			document.getElementById('engine').innerHTML = ''
+			document.getElementById('bounty').setAttribute('style', 'visibility:hidden');
+			document.getElementById('bounty').innerHTML = ''
+			document.getElementById('dying').setAttribute('style', 'visibility:hidden');
+			document.getElementById('dying').innerHTML = ''
 		 }
 		 
 		 function showArt() {
